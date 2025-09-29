@@ -1,0 +1,124 @@
+package edu.infosys.lostAndFoundApplication.bean;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.JoinColumn;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.JoinColumn;
+
+@Entity
+public class LostFoundItem {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // <-- auto-generated
+    private Long itemId;
+    
+    private String username;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "item_id", referencedColumnName = "itemId")
+    private Description description;
+
+    private String userEmail;
+    private String lostDate;
+    private String entryDate;
+    private String foundDate;
+
+    public LostFoundItem() {
+        super();
+    }
+
+   
+
+    public Long getItemId() {
+        return itemId;
+    }
+
+    public String getUserEmail() {
+		return userEmail;
+	}
+
+
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
+
+
+	public LostFoundItem(Long itemId, String username, Description description, String userEmail, String lostDate,
+			String entryDate, String foundDate) {
+		super();
+		this.itemId = itemId;
+		this.username = username;
+		this.description = description;
+		this.userEmail = userEmail;
+		this.lostDate = lostDate;
+		this.entryDate = entryDate;
+		this.foundDate = foundDate;
+	}
+
+
+
+	public void setItemId(Long itemId) {
+        this.itemId = itemId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Description getDescription() {
+        return description;
+    }
+
+    public void setDescription(Description description) {
+        this.description = description;
+    }
+
+    public String getLostDate() {
+        return lostDate;
+    }
+
+    public void setLostDate(String lostDate) {
+        this.lostDate = lostDate;
+    }
+
+    public String getEntryDate() {
+        return entryDate;
+    }
+
+    public void setEntryDate(String entryDate) {
+        this.entryDate = entryDate;
+    }
+
+    public String getFoundDate() {
+        return foundDate;
+    }
+
+    public void setFoundDate(String foundDate) {
+        this.foundDate = foundDate;
+    }
+
+    @Override
+    public String toString() {
+        return "LostFoundItem [itemId=" + itemId +
+               ", username=" + username +
+               ", description=" + description +
+               ", lostDate=" + lostDate +
+               ", entryDate=" + entryDate +
+               ", foundDate=" + foundDate + "]";
+    }
+}

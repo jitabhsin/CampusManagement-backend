@@ -1,0 +1,56 @@
+package edu.infosys.lostAndFoundApplication.controller;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import edu.infosys.lostAndFoundApplication.bean.CampusUser;
+import edu.infosys.lostAndFoundApplication.bean.Description;
+import edu.infosys.lostAndFoundApplication.config.EncoderConfig;
+import edu.infosys.lostAndFoundApplication.dao.DescriptionDao;
+import edu.infosys.lostAndFoundApplication.dao.DescriptionRepository;
+import edu.infosys.lostAndFoundApplication.service.CampusUserService;
+@RestController
+@RequestMapping("/lost-found/")
+@CrossOrigin(origins = "http://localhost:3939")
+public class DescriptionController {
+	private DescriptionDao descriptionDao;
+	
+	
+	public void save(Description description) {
+		// TODO Auto-generated method stub
+		descriptionDao.save(description);
+	}
+
+	
+	public List<Description> findAll() {
+		// TODO Auto-generated method stub
+		return descriptionDao.findAll();
+	}
+
+	
+	public Description findById(Long id) {
+		// TODO Auto-generated method stub
+ 	      return descriptionDao.findById(id).get();
+	}
+	
+
+	public void deleteById(Long id) {
+		// TODO Auto-generated method stub
+		descriptionDao.deleteById(id);
+	}
+	
+	public void update(Description description) {
+		// TODO Auto-generated method stub
+		descriptionDao.save(description);
+	}
+	
+}
