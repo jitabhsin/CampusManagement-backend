@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import edu.infosys.lostAndFoundApplication.bean.CampusUser;
 import edu.infosys.lostAndFoundApplication.bean.LostFoundItem;
 import edu.infosys.lostAndFoundApplication.dao.LostFoundItemDao;
 import edu.infosys.lostAndFoundApplication.service.CampusUserService;
@@ -31,6 +32,10 @@ public class LostFoundItemController {
     @PostMapping("/item")
     public void createItem(@RequestBody LostFoundItem item) {
         lostFoundItemDao.save(item);
+    }
+    @GetMapping("/students")
+    public List<CampusUser> getAllStudents() {  // fixed typo: CampusUser
+        return service.getAllStudents();
     }
 
     // This method is now specifically for marking an existing item as found

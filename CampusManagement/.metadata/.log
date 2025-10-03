@@ -11840,3 +11840,168 @@ java.lang.InterruptedException
 
 !ENTRY org.eclipse.lsp4e 1 0 2025-10-03 21:47:37.178
 !MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:33.029
+!MESSAGE [Info]	[fetchCompletions] Request d48a36a4-5372-46b6-bfc8-dead6f1c08e3 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1872.7776000015438ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:33.030
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:33.671
+!MESSAGE [Info]	[fetchCompletions] Request 2f4b014f-8fd0-459d-84f3-863fdc78dcbf at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 623.2258999999613ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:33.673
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:34.310
+!MESSAGE [Info]	[fetchCompletions] Request 3935890f-e289-485d-b943-bc38c695b656 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 573.1834000013769ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:34.311
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:34.763
+!MESSAGE [Info]	[fetchCompletions] Request 401821c3-bc17-4267-a1b9-cc8f520ddc33 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 419.07539999857545ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:34.946
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:41.356
+!MESSAGE [Info]	[fetchCompletions] Request 96223511-f5a5-41e5-ab1a-e5fb19451a8d at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 596.938599999994ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:41.668
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:42.633
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:42.634
+!MESSAGE [Info]	[fetchCompletions] Request 16f87b08-bf2b-4c5f-9441-57f1a9642cd1 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 739.2280999999493ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:43.275
+!MESSAGE [Info]	[fetchCompletions] Request 9ed2e9c2-74f2-4452-b989-ebba57a268f8 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 603.6308000013232ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:43.276
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:46.546
+!MESSAGE [Info]	[fetchCompletions] Request d2ad067f-cb64-46c2-9be3-51bc98af5cbe at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 456.87049999833107ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:46.860
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:47.427
+!MESSAGE [Info]	[fetchCompletions] Request 769cc230-2531-47db-bde8-0df059f2cf21 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 535.1731000002474ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:09:47.434
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-10-03 22:10:30.348
+!MESSAGE Classpath changed for project: lostAndFoundApplication
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:12:39.945
+!MESSAGE [Info]	[fetchCompletions] Request e8844068-145c-40e7-8046-b1331852f04b at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 2288.7027000002563ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:12:40.227
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:12:45.998
+!MESSAGE [Info]	[fetchCompletions] Request cadea5e9-570e-4829-83f0-20642a07fe7d at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 887.5289999991655ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:12:46.000
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:26:55.025
+!MESSAGE [Info]	[fetchCompletions] Request 66b6ad49-ec9b-4bb0-8d77-dd9de22cf77d at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 2192.17679999955ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:26:55.026
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:27:35.289
+!MESSAGE [Info]	[fetchCompletions] Request 2080993b-f6f4-4041-a207-2f2f9fc6fe68 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 797.9876000005752ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:27:35.340
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:27:43.408
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:27:43.409
+!MESSAGE [Info]	[fetchCompletions] Request 5f74edfe-d40c-4d36-8388-bc5684e0518e at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 693.3923000004143ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:29:31.835
+!MESSAGE [Info]	[fetchCompletions] Request fb61b22f-0aa4-4afe-8199-e86840280019 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 608.2143000010401ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:29:31.836
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:29:35.648
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 22:29:35.649
+!MESSAGE [Info]	[fetchCompletions] Request 30d4b239-d009-4533-8ec3-f68b7c0d6246 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 803.7912000007927ms
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.603
+!MESSAGE [Info] Document is null for editor: LostFoundItem.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.604
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/bean/LostFoundItem.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.643
+!MESSAGE [Info] Document is null for editor: LostFoundItemController.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.645
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/controller/LostFoundItemController.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.716
+!MESSAGE [Info] Document is null for editor: CampusUserService.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.717
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/service/CampusUserService.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.739
+!MESSAGE [Info] Document is null for editor: LostFoundItemDaoImpl.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.740
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/dao/LostFoundItemDaoImpl.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.885
+!MESSAGE [Info] Document is null for editor: LostFoundItemDao.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.886
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/dao/LostFoundItemDao.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.970
+!MESSAGE [Info] Document is null for editor: LostFoundItemRepository.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.971
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/dao/LostFoundItemRepository.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.993
+!MESSAGE [Info] Document is null for editor: CampusUserRepository.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:36.994
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/dao/CampusUserRepository.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:37.014
+!MESSAGE [Info] Document is null for editor: EncoderConfig.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:37.014
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/config/EncoderConfig.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:37.039
+!MESSAGE [Info] Document is null for editor: SystemConfig.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:37.040
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/config/SystemConfig.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:37.062
+!MESSAGE [Info] Document is null for editor: CampusUser.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:37.063
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/bean/CampusUser.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:37.110
+!MESSAGE [Info] Document is null for editor: LoginController.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 22:55:37.110
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/controller/LoginController.java
