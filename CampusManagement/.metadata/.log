@@ -10845,3 +10845,998 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 12:32:31.770
 !MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/controller/LostFoundItemController.java
+!SESSION 2025-09-29 20:00:36.597 -----------------------------------------------
+eclipse.buildId=4.33.0.202410162246
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY ch.qos.logback.classic 1 0 2025-09-29 20:02:26.296
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.core.resources 4 567 2025-09-29 20:02:52.820
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2025-09-29 20:02:52.820
+!MESSAGE Could not read metadata for '.org.eclipse.egit.core.cmp'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/.org.eclipse.egit.core.cmp)[567]: java.lang.Exception: The project description file (.project) for '.org.eclipse.egit.core.cmp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:970)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:954)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:934)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:790)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1616)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2618)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2319)
+	at org.eclipse.core.resources.ResourcesPlugin$WorkspaceInitCustomizer.addingService(ResourcesPlugin.java:591)
+	at org.eclipse.core.resources.ResourcesPlugin$WorkspaceInitCustomizer.addingService(ResourcesPlugin.java:1)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:947)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:257)
+	at org.osgi.util.tracker.AbstractTracked.trackInitial(AbstractTracked.java:184)
+	at org.osgi.util.tracker.ServiceTracker.open(ServiceTracker.java:324)
+	at org.osgi.util.tracker.ServiceTracker.open(ServiceTracker.java:267)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:565)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:833)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:825)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:775)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1057)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:387)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:639)
+	at org.eclipse.osgi.container.Module.start(Module.java:498)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:528)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:122)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:620)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:348)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:414)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:41)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:516)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:434)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:174)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:153)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2025-09-29 20:02:52.827
+!MESSAGE The project description file (.project) for '.org.eclipse.egit.core.cmp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!STACK 0
+java.lang.Exception: The project description file (.project) for '.org.eclipse.egit.core.cmp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:970)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:954)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:934)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:790)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1616)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2618)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2319)
+	at org.eclipse.core.resources.ResourcesPlugin$WorkspaceInitCustomizer.addingService(ResourcesPlugin.java:591)
+	at org.eclipse.core.resources.ResourcesPlugin$WorkspaceInitCustomizer.addingService(ResourcesPlugin.java:1)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:947)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:257)
+	at org.osgi.util.tracker.AbstractTracked.trackInitial(AbstractTracked.java:184)
+	at org.osgi.util.tracker.ServiceTracker.open(ServiceTracker.java:324)
+	at org.osgi.util.tracker.ServiceTracker.open(ServiceTracker.java:267)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:565)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:833)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:825)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:775)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1057)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:387)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:639)
+	at org.eclipse.osgi.container.Module.start(Module.java:498)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:528)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:122)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:620)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:348)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:414)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:41)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:516)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:434)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:174)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:153)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY ch.qos.logback.classic 1 0 2025-09-29 20:02:53.831
+!MESSAGE Logback config file: C:\Users\ASUS\Documents\Infosysproject2025\CampusManagement-backend\CampusManagement\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.ui 2 0 2025-09-29 20:02:54.788
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-09-29 20:02:54.788
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2025-09-29 20:02:55.387
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-09-29 20:02:55.387
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2025-09-29 20:03:03.889
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Users\ASUS\Downloads\sts-4.26.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551\jre\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1759156383887
+-Dlanguageserver.hover-timeout=225
+-jar
+C:\Users\ASUS\Downloads\sts-4.26.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-09-29 20:03:03.890
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2025-09-29 20:03:03.960
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 12680
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 20:03:06.605
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 20:03:06.616
+!MESSAGE [Info] Found native binary in fragment bundle: com.microsoft.copilot.eclipse.core.agent.win32
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 20:03:06.668
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-09-29 20:03:06.960
+!MESSAGE Boot project ADDED: lostAndFoundApplication
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-09-29 20:03:06.962
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-09-29 20:03:06.965
+!MESSAGE Started Boot LS process
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-09-29 20:03:07.399
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ASUS'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:03:12.000
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.363.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:03:12.868
+!MESSAGE [Info]	[certificates] Removed 15 expired certificates
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-09-29 20:34:47.293
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 20:34:52.185
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-09-29 20:35:14.929
+!MESSAGE InterruptedException
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.operations.codeactions.LSPCodeActionMarkerResolution.checkMarkerResolution(LSPCodeActionMarkerResolution.java:159)
+	at org.eclipse.lsp4e.operations.codeactions.LSPCodeActionMarkerResolution.getResolutions(LSPCodeActionMarkerResolution.java:105)
+	at org.springframework.tooling.boot.ls.markers.LSPBootCodeActionMarkerResolution.getResolutions(LSPBootCodeActionMarkerResolution.java:25)
+	at org.eclipse.ui.internal.ide.registry.MarkerHelpRegistry.getResolutions(MarkerHelpRegistry.java:393)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectMarkerProposals(JavaCorrectionProcessor.java:318)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectProposals(JavaCorrectionProcessor.java:277)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.getMarkerAnnotationFixes(ProblemHover.java:154)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.computeCompletionProposals(ProblemHover.java:95)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.<init>(ProblemHover.java:74)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover.createAnnotationInfo(ProblemHover.java:178)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractAnnotationHover.getHoverInfo2(AbstractAnnotationHover.java:755)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-09-29 20:37:09.073
+!MESSAGE Classpath changed for project: lostAndFoundApplication
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:28.160
+!MESSAGE [Info]	[fetchCompletions] Request 665e6692-4861-4016-a6e2-1cf90f427c6d at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1610.7447999999858ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:28.170
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:38.084
+!MESSAGE [Info]	[fetchCompletions] Request c8f22d1a-6dd1-41e5-b24b-3141bd81a7e8 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 788.2379000000656ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:38.085
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:38.720
+!MESSAGE [Info]	[fetchCompletions] Request 02b4013b-1aab-45c1-a070-68dbd06d44db at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 591.5575000001118ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:38.720
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:40.956
+!MESSAGE [Info]	[fetchCompletions] Request 1e398776-105b-4761-96a0-0ba4f451a793 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 705.9363000001758ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:41.026
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:47.034
+!MESSAGE [Info]	[fetchCompletions] Request 9475da62-bb9c-4e03-bba3-845663819928 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 795.9932000003755ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:47.040
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:47.678
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:47.679
+!MESSAGE [Info]	[fetchCompletions] Request 161f272f-23ac-4180-970d-83425a914001 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 611.0063000000082ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:53.118
+!MESSAGE [Info]	[fetchCompletions] Request eb7094e5-4192-4542-a6e1-cbf82068c17e at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 502.40950000006706ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:43:53.118
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-09-29 20:47:07.747
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:32.164
+!MESSAGE [Info]	[fetchCompletions] Request 70c6b743-c306-4e1c-83aa-2061730c9db8 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1637.2933000000194ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:32.164
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:32.805
+!MESSAGE [Info]	[fetchCompletions] Request 671bd071-90cd-4e10-9c1f-be810ed07162 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 617.5054999999702ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:32.806
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:33.440
+!MESSAGE [Info]	[fetchCompletions] Request 30e95b26-adaa-4024-9abf-154b15caf12b at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 587.3023999999277ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:33.506
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:35.357
+!MESSAGE [Info]	[fetchCompletions] Request 9628fae4-19d2-4e43-bad5-c8a945eb62ec at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 686.5805999999866ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:35.475
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:36.320
+!MESSAGE [Info]	[fetchCompletions] Request 3e742bf4-4864-4f2e-9b68-33878cc3e1e3 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 822.996499999892ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-09-29 20:48:36.385
+!MESSAGE [Error]	[AsyncCompletionManager] [3e742bf4-4864-4f2e-9b68-33878cc3e1e3] Request errored with AbortError: The operation was aborted.
+    at EventTarget.abortHandler (C:\snapshot\copilot-client\node_modules\@adobe\helix-fetch\src\fetch\index.js:106:17)
+    at EventTarget.[nodejs.internal.kHybridDispatch] (node:internal/event_target:831:20)
+    at EventTarget.dispatchEvent (node:internal/event_target:766:26)
+    at abortSignal (node:internal/abort_controller:370:10)
+    at AbortController.abort (node:internal/abort_controller:392:5)
+    at C:\snapshot\copilot-client\lib\src\networking.ts:105:19
+    at W0e.invoke (C:\snapshot\copilot-client\node_modules\vscode-jsonrpc\lib\common\events.js:55:39)
+    at t.fire (C:\snapshot\copilot-client\node_modules\vscode-jsonrpc\lib\common\events.js:117:36)
+    at Jj.cancel (C:\snapshot\copilot-client\node_modules\vscode-jsonrpc\lib\common\cancellation.js:41:31)
+    at G0e.cancel (C:\snapshot\copilot-client\node_modules\vscode-jsonrpc\lib\common\cancellation.js:82:25) {
+  type: 'aborted',
+  _name: 'AbortError'
+}
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:36.961
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:36.961
+!MESSAGE [Info]	[fetchCompletions] Request 2a0cf1b2-511f-4018-8fb4-18c25b3e7620 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 573.0523999999277ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:38.241
+!MESSAGE [Info]	[fetchCompletions] Request 6f55d637-ff3b-4079-9a1d-b34ad3e3756e at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1201.032600000035ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:38.241
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:39.520
+!MESSAGE [Info]	[fetchCompletions] Request 2459a2ad-4548-42c8-a06a-fc565033e32b at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 571.5462000002153ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:39.521
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:40.160
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:40.161
+!MESSAGE [Info]	[fetchCompletions] Request 677e5748-4a30-49ef-8b9b-29c1e70e23ba at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 606.0882999999449ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:44.643
+!MESSAGE [Info]	[fetchCompletions] Request 2b5d0d34-fcc4-4964-93a9-72c28a72e999 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 710.5025999997742ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:44.710
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:45.598
+!MESSAGE [Info]	[fetchCompletions] Request 402c27d4-9040-4bf3-81ff-8f1e31765afd at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 858.8728000000119ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:48:45.653
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:49:14.083
+!MESSAGE [Info]	[fetchCompletions] Request c66e54f1-ccc7-4578-a407-7b50d47780b8 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 610.6792999999598ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:49:14.083
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:49:14.720
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:49:14.720
+!MESSAGE [Info]	[fetchCompletions] Request c2e7798d-7643-46c6-bf79-e102ce757f59 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 614.5783999999985ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:49:26.242
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:49:26.243
+!MESSAGE [Info]	[fetchCompletions] Request ff516481-0cc9-4779-9d12-868b39bb5941 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 702.1507000001147ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:49:31.707
+!MESSAGE [Info]	[fetchCompletions] Request 78287a4d-01f2-44b9-b2d4-6235c34634bd at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 2577.8484999998473ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:49:31.736
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-09-29 20:50:30.638
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:52:06.269
+!MESSAGE [Info]	[fetchCompletions] Request af68da34-07c0-4e43-950c-dc832438c6b0 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1533.8684000000358ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:52:06.328
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:52:06.887
+!MESSAGE [Info]	[fetchCompletions] Request 49a6a189-1d7b-4df6-a125-c863a47b4506 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 524.6105999997817ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-09-29 20:52:06.888
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-09-29 20:52:12.526
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 21:02:05.573
+!MESSAGE [Info] Document is null for editor: LostFoundItemController.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 21:02:05.574
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/controller/LostFoundItemController.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 21:02:05.656
+!MESSAGE [Info] Document is null for editor: LoginController.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 21:02:05.657
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/controller/LoginController.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 21:02:05.678
+!MESSAGE [Info] Document is null for editor: LostFoundItemDaoImpl.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 21:02:05.679
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/dao/LostFoundItemDaoImpl.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 21:02:05.720
+!MESSAGE [Info] Document is null for editor: LostFoundItemDao.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 21:02:05.721
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/dao/LostFoundItemDao.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 21:02:05.786
+!MESSAGE [Info] Document is null for editor: LostFoundItemRepository.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 21:02:05.787
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/dao/LostFoundItemRepository.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 21:02:05.872
+!MESSAGE [Info] Document is null for editor: CampusUserRepository.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-09-29 21:02:05.873
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/dao/CampusUserRepository.java
+!SESSION 2025-10-02 20:03:48.860 -----------------------------------------------
+eclipse.buildId=4.33.0.202410162246
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY ch.qos.logback.classic 1 0 2025-10-02 20:05:31.378
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-10-02 20:05:41.217
+!MESSAGE Logback config file: C:\Users\ASUS\Documents\Infosysproject2025\CampusManagement-backend\CampusManagement\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.ui 2 0 2025-10-02 20:05:42.147
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-10-02 20:05:42.147
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2025-10-02 20:05:42.786
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-10-02 20:05:42.786
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2025-10-02 20:05:51.510
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Users\ASUS\Downloads\sts-4.26.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551\jre\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1759415751508
+-Dlanguageserver.hover-timeout=225
+-jar
+C:\Users\ASUS\Downloads\sts-4.26.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-10-02 20:05:51.511
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2025-10-02 20:05:51.582
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 22472
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-02 20:05:54.914
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-02 20:05:54.922
+!MESSAGE [Info] Found native binary in fragment bundle: com.microsoft.copilot.eclipse.core.agent.win32
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-02 20:05:54.974
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-10-02 20:05:55.253
+!MESSAGE Boot project ADDED: lostAndFoundApplication
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-10-02 20:05:55.254
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-10-02 20:05:55.259
+!MESSAGE Started Boot LS process
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-10-02 20:05:55.729
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ASUS'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-02 20:05:59.946
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.363.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-02 20:06:00.558
+!MESSAGE [Info]	[certificates] Removed 15 expired certificates
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-10-02 20:18:47.578
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-02 20:41:08.297
+!MESSAGE [Info]	[default] Context provider relatedFilesShim exceeded time budget of 150ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-02 20:41:09.683
+!MESSAGE [Info]	[fetchCompletions] Request 24d9ca13-8c70-492d-85c0-4eea7fccd90a at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1377.026399999857ms
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-02 20:41:09.738
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-02 20:41:09.841
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 00:50:17.040
+!MESSAGE [Info] Document is null for editor: CampusUserService.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 00:50:17.046
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/service/CampusUserService.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 00:50:17.091
+!MESSAGE [Info] Document is null for editor: LostFoundItemDaoImpl.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 00:50:17.092
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/dao/LostFoundItemDaoImpl.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 00:50:17.116
+!MESSAGE [Info] Document is null for editor: LostFoundItemDao.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 00:50:17.117
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/dao/LostFoundItemDao.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 00:50:17.139
+!MESSAGE [Info] Document is null for editor: LostFoundItemRepository.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 00:50:17.140
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/dao/LostFoundItemRepository.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 00:50:17.162
+!MESSAGE [Info] Document is null for editor: CampusUserRepository.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 00:50:17.163
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/dao/CampusUserRepository.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 00:50:17.234
+!MESSAGE [Info] Document is null for editor: LostFoundItemController.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 00:50:17.235
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/lostAndFoundApplication/src/main/java/edu/infosys/lostAndFoundApplication/controller/LostFoundItemController.java
+!SESSION 2025-10-03 17:55:18.527 -----------------------------------------------
+eclipse.buildId=4.33.0.202410162246
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY ch.qos.logback.classic 1 0 2025-10-03 17:56:37.532
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-10-03 17:56:43.728
+!MESSAGE Logback config file: C:\Users\ASUS\Documents\Infosysproject2025\CampusManagement-backend\CampusManagement\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.ui 2 0 2025-10-03 17:56:44.644
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-10-03 17:56:44.646
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2025-10-03 17:56:45.392
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-10-03 17:56:45.392
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2025-10-03 17:56:53.292
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Users\ASUS\Downloads\sts-4.26.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551\jre\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=C:/Users/ASUS/Documents/Infosysproject2025/CampusManagement-backend/CampusManagement/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1759494413291
+-Dlanguageserver.hover-timeout=225
+-jar
+C:\Users\ASUS\Downloads\sts-4.26.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-10-03 17:56:53.293
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2025-10-03 17:56:53.339
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 7868
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 17:56:55.327
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 17:56:55.333
+!MESSAGE [Info] Found native binary in fragment bundle: com.microsoft.copilot.eclipse.core.agent.win32
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 17:56:55.370
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-10-03 17:56:55.594
+!MESSAGE Boot project ADDED: lostAndFoundApplication
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-10-03 17:56:55.595
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-10-03 17:56:55.597
+!MESSAGE Started Boot LS process
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-10-03 17:56:55.871
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ASUS'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 17:56:59.571
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.363.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 17:57:00.059
+!MESSAGE [Info]	[certificates] Removed 15 expired certificates
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 18:26:09.531
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 18:26:10.018
+!MESSAGE [Info]	[default] Context provider relatedFilesShim exceeded time budget of 150ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 18:26:12.679
+!MESSAGE [Info]	[fetchCompletions] Request 92333b78-4c81-4ddf-af26-a98f58a43741 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 2648.1348000001162ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 18:26:12.680
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 19:00:02.009
+!MESSAGE [Info]	[fetchCompletions] Request 547682fa-0052-4399-9b2d-37eddcb29680 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1550.6806999999098ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 19:00:02.010
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:23.083
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:23.085
+!MESSAGE [Info]	[fetchCompletions] Request 074618c7-302b-40e8-acf5-d1d4a289acea at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1561.7735999990255ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:23.717
+!MESSAGE [Info]	[fetchCompletions] Request 3b9149df-7d22-40ab-a60f-be38e9ceeaeb at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 599.6378999985754ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:23.805
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:24.675
+!MESSAGE [Info]	[fetchCompletions] Request 80a7ea6e-eb85-43af-96d4-3c98b6facac4 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 782.1447000000626ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:24.807
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:25.655
+!MESSAGE [Info]	[fetchCompletions] Request 29da6d09-466b-4ed3-93b9-20cad293e429 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 785.7077999990433ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:25.656
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:38.443
+!MESSAGE [Info]	[fetchCompletions] Request 6e42927f-528a-4fe1-ad30-ba8d4be8c26c at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 762.8195999991149ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:38.444
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:39.067
+!MESSAGE [Info]	[fetchCompletions] Request 9eab28dc-6da2-42be-a9c9-8573734bfa9b at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 507.63329999893904ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:39.076
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:39.707
+!MESSAGE [Info]	[fetchCompletions] Request 603b18f5-7c8d-47c7-a0ad-9a384c0cf4f2 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 601.8483000006527ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:39.764
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:41.954
+!MESSAGE [Info]	[fetchCompletions] Request b7297ee6-e7cf-48e2-a6f8-2ff11bd83e19 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 802.307899998501ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:41.955
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:42.591
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:42.591
+!MESSAGE [Info]	[fetchCompletions] Request 2f24ba65-2b77-41e9-a790-b635ffc31c1e at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 612.0296000000089ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:43.556
+!MESSAGE [Info]	[fetchCompletions] Request 54c89f3b-d2c7-435a-bb0d-2bbbbb497efa at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 933.2668000012636ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:43.557
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:44.831
+!MESSAGE [Info]	[fetchCompletions] Request 118e5558-d3b4-44ee-be2f-44dd55cb1638 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 821.5921999998391ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:44.960
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:45.791
+!MESSAGE [Info]	[fetchCompletions] Request 4156ac22-751c-4569-9952-7dda9ea3fd36 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 809.9666999988258ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:45.792
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:46.747
+!MESSAGE [Info]	[fetchCompletions] Request 97c590c6-a7cc-44da-81e6-2db9aa144890 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 925.8707999996841ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-10-03 20:34:46.985
+!MESSAGE [Error]	[AsyncCompletionManager] [97c590c6-a7cc-44da-81e6-2db9aa144890] Request errored with AbortError: The operation was aborted.
+    at EventTarget.abortHandler (C:\snapshot\copilot-client\node_modules\@adobe\helix-fetch\src\fetch\index.js:106:17)
+    at EventTarget.[nodejs.internal.kHybridDispatch] (node:internal/event_target:831:20)
+    at EventTarget.dispatchEvent (node:internal/event_target:766:26)
+    at abortSignal (node:internal/abort_controller:370:10)
+    at AbortController.abort (node:internal/abort_controller:392:5)
+    at C:\snapshot\copilot-client\lib\src\networking.ts:105:19
+    at W0e.invoke (C:\snapshot\copilot-client\node_modules\vscode-jsonrpc\lib\common\events.js:55:39)
+    at t.fire (C:\snapshot\copilot-client\node_modules\vscode-jsonrpc\lib\common\events.js:117:36)
+    at Jj.cancel (C:\snapshot\copilot-client\node_modules\vscode-jsonrpc\lib\common\cancellation.js:41:31)
+    at G0e.cancel (C:\snapshot\copilot-client\node_modules\vscode-jsonrpc\lib\common\cancellation.js:82:25) {
+  type: 'aborted',
+  _name: 'AbortError'
+}
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:47.718
+!MESSAGE [Info]	[fetchCompletions] Request d6b376e7-7d74-46d3-88df-6b936d8319b9 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 727.0960000008345ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:47.719
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:48.987
+!MESSAGE [Info]	[fetchCompletions] Request 19afe3ad-3d63-4aa1-b795-1c2305757eef at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 712.3824999984354ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:49.000
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:49.308
+!MESSAGE [Info]	[fetchCompletions] Request b34ce892-14be-402d-a1d0-d4f41f5e8230 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 630.3363000005484ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:49.628
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 20:34:55.249
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:55.744
+!MESSAGE [Info]	[fetchCompletions] Request 188096c5-57a2-4246-8050-6a9e6e2ac1d4 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 5474.003500001505ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:55.757
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:56.994
+!MESSAGE [Info]	[fetchCompletions] Request cb76eaa6-a332-4f44-9efb-4d606f23b537 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1452.897099999711ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:34:56.995
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-10-03 20:35:25.463
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:26.749
+!MESSAGE [Info]	[fetchCompletions] Request 5d3de77e-8532-4577-a127-9bc03d777a18 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1259.9701999984682ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:27.386
+!MESSAGE [Info]	[fetchCompletions] Request 90d84370-04c5-4972-a096-56f976c0a2de at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1678.8687999993563ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:27.420
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:28.414
+!MESSAGE [Info]	[fetchCompletions] Request 2afb95a7-00dd-466d-b55a-7d6bc7119464 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 885.1798000000417ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:28.415
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:30.267
+!MESSAGE [Info]	[fetchCompletions] Request 91c9dbdc-086e-4d69-89be-013adf7cb0ef at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 688.6644999999553ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:30.718
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:31.555
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:31.555
+!MESSAGE [Info]	[fetchCompletions] Request 8d7a7650-5d17-4471-a61a-e264e7a65e48 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 814.6008999999613ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:35.105
+!MESSAGE [Info]	[fetchCompletions] Request 1175353e-93de-4614-92be-e111072b9a52 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 826.5754000004381ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:35.133
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:35.720
+!MESSAGE [Info]	[fetchCompletions] Request 5908ca8b-537e-4331-86d9-c7dea52294d0 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 546.6415999997407ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:35.720
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:43.073
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:35:43.073
+!MESSAGE [Info]	[fetchCompletions] Request d474c6b0-d8ab-4b6a-8653-e4dbec1b1de7 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 539.44820000045ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:20.199
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:20.199
+!MESSAGE [Info]	[fetchCompletions] Request 71115b54-9370-44ab-a0e3-8c0f8533f098 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1587.9677000008523ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:20.861
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:20.862
+!MESSAGE [Info]	[fetchCompletions] Request 8843afcf-06d8-4b19-a9fe-4d70e06509fc at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 646.9920000005513ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:21.476
+!MESSAGE [Info]	[fetchCompletions] Request 501550b1-3466-4745-9a44-c688fe2792ca at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 594.3769000004977ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:21.477
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:22.112
+!MESSAGE [Info]	[fetchCompletions] Request e7cac796-b7f1-4f2d-a2af-399953f58e45 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 511.7881000004709ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:22.120
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:22.755
+!MESSAGE [Info]	[fetchCompletions] Request e01c499e-19e6-414f-a853-9cfdd15559e1 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 600.440700000152ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:22.808
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:30.852
+!MESSAGE [Info]	[fetchCompletions] Request a7153232-e946-42bd-baf6-62381cc705fb at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 603.2108999993652ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:31.080
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:31.724
+!MESSAGE [Info]	[fetchCompletions] Request a22a3f4f-3cf8-4aea-a6a2-24daac887bd7 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 601.9230000004172ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:31.724
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:33.627
+!MESSAGE [Info]	[fetchCompletions] Request 02e2519b-3cb7-4ded-94a7-2d7c0d6b9a1c at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 811.0935999993235ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:33.958
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:34.595
+!MESSAGE [Info]	[fetchCompletions] Request 43b944d1-4f28-4ba9-9c22-964dce04212e at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 593.5701000001281ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:38:34.595
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:19.192
+!MESSAGE [Info]	[fetchCompletions] Request f2478b40-4d51-4aa6-8604-a2f823763887 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 4247.113800000399ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:19.193
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:20.170
+!MESSAGE [Info]	[fetchCompletions] Request 7e877176-f8bb-4da0-b64f-d5502b515d07 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 958.5822999998927ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:20.170
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:21.142
+!MESSAGE [Info]	[fetchCompletions] Request 7d8cfa46-882a-4a79-9ecc-60ce736671e7 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 935.0238999985158ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:21.142
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:22.302
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:22.303
+!MESSAGE [Info]	[fetchCompletions] Request fee08fff-4a72-4ade-afab-c10d64ce0772 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 916.1787999998778ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:23.039
+!MESSAGE [Info]	[fetchCompletions] Request a700f7cf-7f05-490c-991a-9bf2c83c5c4c at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 722.426000000909ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:23.039
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:24.006
+!MESSAGE [Info]	[fetchCompletions] Request c8e03e48-d428-49b6-8c88-d6b9fa9c6f37 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 857.191800000146ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:24.006
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:29.319
+!MESSAGE [Info]	[fetchCompletions] Request b4f6c2b8-9063-4d01-abcb-cc901a30c1c1 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 779.8565999995917ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:29.320
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:30.051
+!MESSAGE [Info]	[fetchCompletions] Request bcb4ce5c-b0d3-41d0-8651-b0815eccde5e at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 712.157599998638ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 20:41:30.079
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 21:27:33.997
+!MESSAGE [Info]	[fetchCompletions] Request 3213a3a2-ffe1-43c2-bbcb-9b9326ef8af0 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 2324.322899999097ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 21:27:34.291
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 21:27:34.936
+!MESSAGE [Info]	[fetchCompletions] Request 4a7b5416-5292-48c3-af8e-0c756edf0aca at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 631.3517000004649ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 21:27:35.247
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-10-03 21:27:36.273
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 21:35:15.407
+!MESSAGE [Info]	[fetchCompletions] Request 8e788baf-74f7-46b0-84ea-f189095a2c3a at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 2223.99479999952ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 21:35:15.735
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 21:35:16.367
+!MESSAGE [Info]	[fetchCompletions] Request 8a1e5266-efc7-405b-82dd-b0e3d786b0a8 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 607.5868999995291ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 21:35:16.390
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 21:47:37.177
+!MESSAGE [Info]	[fetchCompletions] Request e83b5316-9ad6-43e9-9838-4a5f175d5aa6 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1733.9300000015646ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-03 21:47:37.178
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]

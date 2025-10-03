@@ -1,5 +1,7 @@
 package edu.infosys.lostAndFoundApplication.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,7 +13,7 @@ import edu.infosys.lostAndFoundApplication.dao.CampusUserRepository;
 
 @Service
 public class CampusUserService implements UserDetailsService{
-
+    
 	@Autowired
 	private CampusUserRepository repository;
     private String role;
@@ -36,6 +38,9 @@ public class CampusUserService implements UserDetailsService{
 		this.role=user.getRole();
 		return user;
 		
+	}
+    public List<CampusUser>getAllStudents(){
+		return repository.getAllStudents();
 	}
  
 }
