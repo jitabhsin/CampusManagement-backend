@@ -1,0 +1,89 @@
+package edu.infosys.lostAndFoundApplication.controller;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import edu.infosys.lostAndFoundApplication.bean.CampusUser;
+import edu.infosys.lostAndFoundApplication.bean.LostFoundItem;
+import edu.infosys.lostAndFoundApplication.dao.LostFoundItemDao;
+import edu.infosys.lostAndFoundApplication.service.CampusUserService;
+
+@RestController
+@RequestMapping("/lost-found")
+@CrossOrigin(origins = "http://localhost:5173") // Ensure this matches your Vite dev server port
+public class LostFoundItemController {
+
+    @Autowired
+    private LostFoundItemDao lostFoundItemDao;
+
+    @Autowired
+    private CampusUserService service;
+
+    @GetMapping("/item")
+    public List<LostFoundItem> getAllItems() {
+        return lostFoundItemDao.findAll();
+    }
+    
+    // This now handles BOTH new lost and new found item submissions
+    @PostMapping("/item")
+    public void createItem(@RequestBody LostFoundItem item) {
+        lostFoundItemDao.save(item);
+    }
+    @GetMapping("/students")
+    public List<CampusUser> getAllStudents() {  // fixed typo: CampusUser
+        return service.getAllStudents();
+    }
+
+    // This method is now specifically for marking an existing item as found
+    @PutMapping("/item/mark-found")
+    public void markItemAsFound(@RequestBody LostFoundItem itemUpdate) {
+        LostFoundItem item = lostFoundItemDao.findById(itemUpdate.getItemId());
+        if (item != null) {
+            item.setFoundDate(itemUpdate.getFoundDate());
+            lostFoundItemDao.save(item);
+        } else {
+            // Consider throwing a ResourceNotFoundException here
+        }
+    }
+
+    @GetMapping("/item/{id}")
+    public LostFoundItem getItemById(@PathVariable Long id) {
+        return lostFoundItemDao.findById(id);
+    }
+
+    @DeleteMapping("/item/{id}")
+    public void deleteItemById(@PathVariable Long id) {
+        lostFoundItemDao.deleteById(id);
+    }
+
+    @GetMapping("/id-gen")
+    public Long itemIdGenerator() {
+        return lostFoundItemDao.generateId();
+    }
+
+    @GetMapping("/not-found")
+    public List<LostFoundItem> lostItemList() {
+        return lostFoundItemDao.lostItemList();
+    }
+
+    @GetMapping("/found")
+    public List<LostFoundItem> foundItemList() {
+        return lostFoundItemDao.foundItemList();
+    }
+
+    @GetMapping("/lost")
+    public List<LostFoundItem> lostItemListByUser() {
+        String username = service.getUserId();
+        return lostFoundItemDao.lostItemListByUser(username);
+    }
+    
+    @GetMapping("/lostfound")
+    public List<LostFoundItem> foundItemListByUser() {
+        String username = service.getUserId();
+        return lostFoundItemDao.foundItemListByUser(username);
+    }
+}

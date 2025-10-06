@@ -33,6 +33,11 @@ public class LostFoundItemController {
     public void createItem(@RequestBody LostFoundItem item) {
         lostFoundItemDao.save(item);
     }
+    
+    @DeleteMapping("/student/{username}")
+    public void deleteStudent(@PathVariable String username) {
+        service.deleteStudentByUsername(username);
+    }
     @GetMapping("/students")
     public List<CampusUser> getAllStudents() {  // fixed typo: CampusUser
         return service.getAllStudents();

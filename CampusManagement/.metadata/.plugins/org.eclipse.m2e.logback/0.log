@@ -1105,3 +1105,5 @@
 2025-10-03 22:29:51,493 [Worker-117: Launching lostAndFoundApplication - LostAndFoundApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-10-03 22:29:51,518 [Worker-117: Launching lostAndFoundApplication - LostAndFoundApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-10-03 22:29:51,531 [Worker-117: Launching lostAndFoundApplication - LostAndFoundApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ASUS\Documents\Infosysproject2025\CampusManagement-backend\CampusManagement\lostAndFoundApplication\src\test\resources
+2025-10-05 18:35:43,130 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-10-06 19:56:45,452 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
