@@ -34,14 +34,8 @@ public class LostFoundItemController {
         lostFoundItemDao.save(item);
     }
     
-    @DeleteMapping("/student/{username}")
-    public void deleteStudent(@PathVariable String username) {
-        service.deleteStudentByUsername(username);
-    }
-    @GetMapping("/students")
-    public List<CampusUser> getAllStudents() {  // fixed typo: CampusUser
-        return service.getAllStudents();
-    }
+   
+
 
     // This method is now specifically for marking an existing item as found
     @PutMapping("/item/mark-found")

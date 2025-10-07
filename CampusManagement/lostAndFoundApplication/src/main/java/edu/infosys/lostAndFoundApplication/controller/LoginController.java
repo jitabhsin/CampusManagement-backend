@@ -1,5 +1,7 @@
 package edu.infosys.lostAndFoundApplication.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -7,6 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,6 +41,10 @@ public class LoginController {
 		user.setPassword(encodedPassword);
 		service.save(user);
 	}
+	 @DeleteMapping("login/student/{username}")
+	    public void deleteStudent(@PathVariable String username) {
+	        service.deleteStudentByUsername(username);
+	    }
  
 	@GetMapping("/login/{userId}/{password}")
 	public String validateUser(@PathVariable String userId,@PathVariable String password) {
@@ -55,5 +62,8 @@ public class LoginController {
 		return service.getUser();
 	}
  
-
+	 @GetMapping("/login/students")
+	    public List<CampusUser> getAllStudents() {
+	        return service.getAllStudents();
+	    }
 }
