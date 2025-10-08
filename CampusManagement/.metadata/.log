@@ -13633,3 +13633,27 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.jdt.internal.compiler
 
 !ENTRY org.eclipse.m2e.logback.appender 4 0 2025-10-08 14:31:03.677
 !MESSAGE Unexpected URLConnection defaultUseCaches enabled
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2025-10-08 14:31:59.106
+!MESSAGE Unexpected URLConnection defaultUseCaches enabled
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2025-10-08 14:32:01.333
+!MESSAGE Unexpected URLConnection defaultUseCaches enabled
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-10-08 14:32:02.043
+!MESSAGE Classpath changed for project: lostAndFoundApplication
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2025-10-08 14:32:02.480
+!MESSAGE Unexpected URLConnection defaultUseCaches enabled
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2025-10-08 14:33:05.654
+!MESSAGE Unexpected URLConnection defaultUseCaches enabled
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2025-10-08 14:33:07.109
+!MESSAGE Unexpected URLConnection defaultUseCaches enabled
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-10-08 14:33:07.211
+!MESSAGE Classpath changed for project: lostAndFoundApplication
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2025-10-08 14:33:07.958
+!MESSAGE Unexpected URLConnection defaultUseCaches enabled
