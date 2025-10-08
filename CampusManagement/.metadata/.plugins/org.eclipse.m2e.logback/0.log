@@ -1195,3 +1195,15 @@
 2025-10-08 12:20:02,418 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-10-08 12:20:02,424 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-10-08 12:20:02,432 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ASUS\Documents\Infosysproject2025\CampusManagement-backend\CampusManagement\lostAndFoundApplication\src\test\resources
+2025-10-08 12:20:10,803 [Worker-55: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2025-10-08 12:20:10,815 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-08 12:20:10,823 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-08 12:20:10,830 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ASUS\Documents\Infosysproject2025\CampusManagement-backend\CampusManagement\lostAndFoundApplication\src\test\resources
+2025-10-08 12:20:33,525 [Worker-20: Launching lostAndFoundApplication - LostAndFoundApplication] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2025-10-08 12:20:33,536 [Worker-20: Launching lostAndFoundApplication - LostAndFoundApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-08 12:20:33,544 [Worker-20: Launching lostAndFoundApplication - LostAndFoundApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-08 12:20:33,551 [Worker-20: Launching lostAndFoundApplication - LostAndFoundApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ASUS\Documents\Infosysproject2025\CampusManagement-backend\CampusManagement\lostAndFoundApplication\src\test\resources
+2025-10-08 12:20:44,229 [Worker-51: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2025-10-08 12:20:44,243 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-08 12:20:44,252 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-08 12:20:44,259 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ASUS\Documents\Infosysproject2025\CampusManagement-backend\CampusManagement\lostAndFoundApplication\src\test\resources
