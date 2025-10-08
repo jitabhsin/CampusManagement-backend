@@ -1,10 +1,8 @@
 package edu.infosys.lostAndFoundApplication.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import edu.infosys.lostAndFoundApplication.bean.LostFoundItem;
 import edu.infosys.lostAndFoundApplication.service.FuzzyLogic;
 
@@ -14,12 +12,12 @@ import edu.infosys.lostAndFoundApplication.service.FuzzyLogic;
 public class FuzzyLogicController {
 
     @Autowired
-    private FuzzyLogic fuzzyLogic;
+    private FuzzyLogic fuzzyLogic; // CORRECTED: Typo fixed from FyzzyLogic
 
     @GetMapping("/lost/{lostItemId}")
     public List<LostFoundItem> getMatchingFoundItems(
             @PathVariable Long lostItemId,
-            @RequestParam(defaultValue = "0.8") double threshold) {
+            @RequestParam(defaultValue = "0.7") double threshold) {
         return fuzzyLogic.findMatchingFoundItems(lostItemId, threshold);
     }
 }
