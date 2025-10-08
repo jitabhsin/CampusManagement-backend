@@ -4,37 +4,39 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-
 import org.apache.commons.text.similarity.JaroWinklerSimilarity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import edu.infosys.lostAndFoundApplication.bean.LostFoundItem;
-import edu.infosys.lostAndFoundApplication.dao.FuzzyLogicRepository; // UPDATED
+import edu.infosys.lostAndFoundApplication.bean.FoundItem;
+import edu.infosys.lostAndFoundApplication.bean.LostItem;
+import edu.infosys.lostAndFoundApplication.dao.FuzzyLogicRepository; // MODIFIED IMPORT
+import edu.infosys.lostAndFoundApplication.dao.LostItemRepository;
 
 @Service
 public class FuzzyLogic {
 
     @Autowired
-    private FuzzyLogicRepository fuzzyLogicRepository; // UPDATED to use the dedicated repository
+    private LostItemRepository lostItemRepository;
+
+    @Autowired
+    private FuzzyLogicRepository fuzzyLogicRepository; // MODIFIED DEPENDENCY
 
     private final JaroWinklerSimilarity jaro = new JaroWinklerSimilarity();
 
-    public List<LostFoundItem> findMatchingFoundItems(Long lostItemId, double threshold) {
-        Optional<LostFoundItem> lostItemOptional = fuzzyLogicRepository.findById(lostItemId);
+    public List<FoundItem> findMatchingFoundItems(String lostItemId, double threshold) {
+        Optional<LostItem> lostItemOptional = lostItemRepository.findById(lostItemId);
 
         if (lostItemOptional.isEmpty()) {
             return Collections.emptyList();
         }
-        LostFoundItem lostItem = lostItemOptional.get();
-
+        LostItem lostItem = lostItemOptional.get();
         String usernameOfLoser = lostItem.getUsername();
 
-        List<LostFoundItem> foundItemsFromOthers = fuzzyLogicRepository.findFoundItemsExcludingUser(usernameOfLoser);
+        List<FoundItem> foundItemsFromOthers = fuzzyLogicRepository.findFoundItemsExcludingUser(usernameOfLoser);
 
-        List<LostFoundItem> matches = new ArrayList<>();
+        List<FoundItem> matches = new ArrayList<>();
 
-        for (LostFoundItem foundItem : foundItemsFromOthers) {
+        for (FoundItem foundItem : foundItemsFromOthers) {
             double itemNameScore = jaro.apply(lostItem.getItemName(), foundItem.getItemName());
             double brandScore = jaro.apply(lostItem.getBrand(), foundItem.getBrand());
             double colorScore = jaro.apply(lostItem.getColor(), foundItem.getColor());
@@ -46,7 +48,6 @@ public class FuzzyLogic {
                 matches.add(foundItem);
             }
         }
-
         return matches;
     }
 }
