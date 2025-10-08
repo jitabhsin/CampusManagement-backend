@@ -21,6 +21,7 @@ public class FuzzyLogic {
     private final JaroWinklerSimilarity jaro = new JaroWinklerSimilarity();
 
     public List<LostFoundItem> findMatchingFoundItems(Long lostItemId, double threshold) {
+        // Step 1: Safely retrieve the lost item using the standard findById method.
         Optional<LostFoundItem> lostItemOptional = fuzzyLogicRepository.findById(lostItemId);
 
         if (lostItemOptional.isEmpty()) {
@@ -30,10 +31,12 @@ public class FuzzyLogic {
 
         String usernameOfLoser = lostItem.getUsername();
 
+        // Step 2: Fetch "found" items from OTHER users using the dedicated repository.
         List<LostFoundItem> foundItemsFromOthers = fuzzyLogicRepository.findFoundItemsExcludingUser(usernameOfLoser);
 
         List<LostFoundItem> matches = new ArrayList<>();
 
+        // Step 3: Iterate and calculate similarity.
         for (LostFoundItem foundItem : foundItemsFromOthers) {
             double itemNameScore = jaro.apply(lostItem.getItemName(), foundItem.getItemName());
             double brandScore = jaro.apply(lostItem.getBrand(), foundItem.getBrand());

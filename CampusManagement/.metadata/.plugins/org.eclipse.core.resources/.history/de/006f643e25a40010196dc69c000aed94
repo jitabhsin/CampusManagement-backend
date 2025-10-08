@@ -12,7 +12,7 @@ import edu.infosys.lostAndFoundApplication.service.FuzzyLogic;
 public class FuzzyLogicController {
 
     @Autowired
-    private FuzzyLogic fuzzyLogic; 
+    private FuzzyLogic fuzzyLogic; // CORRECTED: Typo fixed from FyzzyLogic
 
     @GetMapping("/lost/{lostItemId}")
     public List<LostFoundItem> getMatchingFoundItems(

@@ -13612,3 +13612,24 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.jdt.internal.compiler
 
 !ENTRY org.eclipse.m2e.logback.appender 4 0 2025-10-08 14:23:11.005
 !MESSAGE Unexpected URLConnection defaultUseCaches enabled
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-08 14:30:32.031
+!MESSAGE [Info]	[fetchCompletions] Request 8e5feeb6-440c-40af-8167-df058cc846c9 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 1354.8169999998063ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-08 14:30:32.047
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2025-10-08 14:30:32.321
+!MESSAGE Unexpected URLConnection defaultUseCaches enabled
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2025-10-08 14:30:57.032
+!MESSAGE Unexpected URLConnection defaultUseCaches enabled
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-08 14:31:02.539
+!MESSAGE [Info]	[fetchCompletions] Request e0aa20a3-b7aa-48c6-ba82-b9c0d5d0deb3 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 501.19470000080764ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-10-08 14:31:02.615
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2025-10-08 14:31:03.677
+!MESSAGE Unexpected URLConnection defaultUseCaches enabled
