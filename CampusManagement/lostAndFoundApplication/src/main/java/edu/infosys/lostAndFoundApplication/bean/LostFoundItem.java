@@ -1,5 +1,6 @@
 package edu.infosys.lostAndFoundApplication.bean;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
@@ -22,6 +23,8 @@ public class LostFoundItem {
     private String lostDate;
     private String entryDate;
     private String foundDate;
+    @Column(length = 512)
+    private String imageUrl;
 
     // No-argument constructor
     public LostFoundItem() {
@@ -29,7 +32,7 @@ public class LostFoundItem {
     }
 
     // All-argument constructor
-    public LostFoundItem(Long itemId, String username, String userEmail, String itemName, String category, String color, String brand, String location, String lostDate, String entryDate, String foundDate) {
+    public LostFoundItem(Long itemId, String username, String userEmail, String itemName, String category, String color, String brand, String location, String lostDate, String entryDate, String foundDate , String imageUrl) {
         this.itemId = itemId;
         this.username = username;
         this.userEmail = userEmail;
@@ -41,9 +44,18 @@ public class LostFoundItem {
         this.lostDate = lostDate;
         this.entryDate = entryDate;
         this.foundDate = foundDate;
+       this.imageUrl=imageUrl;
     }
 
-    // Getters and Setters
+    public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	// Getters and Setters
     public Long getItemId() { return itemId; }
     public void setItemId(Long itemId) { this.itemId = itemId; }
 
