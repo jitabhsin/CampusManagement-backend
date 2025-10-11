@@ -1,0 +1,89 @@
+package edu.infosys.lostAndFoundApplication.controller;
+
+import edu.infosys.lostAndFoundApplication.bean.FoundItem;
+import edu.infosys.lostAndFoundApplication.bean.LostItem;
+import edu.infosys.lostAndFoundApplication.service.CampusUserService;
+import edu.infosys.lostAndFoundApplication.service.FoundItemService;
+import edu.infosys.lostAndFoundApplication.service.LostItemService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/lost-found")
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:3939"})
+public class LostFoundController {
+
+    @Autowired
+    private FoundItemService foundItemService;
+
+    @Autowired
+    private LostItemService lostItemService;
+
+    @Autowired
+    private CampusUserService campusUserService;
+
+    // --- FoundItem Endpoints ---
+
+    @PostMapping("/found-items")
+    public FoundItem createFoundItem(@RequestBody FoundItem foundItem) {
+        return foundItemService.addFoundItem(foundItem);
+    }
+
+    @GetMapping("/found-items")
+    public List<FoundItem> getAllFoundItems() {
+        return foundItemService.getAllFoundItems();
+    }
+
+    @GetMapping("/found-items/{id}")
+    public ResponseEntity<FoundItem> getFoundItemById(@PathVariable String id) {
+        return foundItemService.getFoundItemById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/found-items/{id}")
+    public ResponseEntity<Void> deleteFoundItem(@PathVariable String id) {
+        foundItemService.deleteFoundItem(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/found-items/user")
+    public List<FoundItem> getFoundItemsByUser() {
+        String username = campusUserService.getUserId();
+        return foundItemService.getFoundItemsByUsername(username);
+    }
+
+    // --- LostItem Endpoints ---
+
+    @PostMapping("/lost-items")
+    public LostItem createLostItem(@RequestBody LostItem lostItem) {
+        return lostItemService.addLostItem(lostItem);
+    }
+
+    @GetMapping("/lost-items")
+    public List<LostItem> getAllLostItems() {
+        return lostItemService.getAllLostItems();
+    }
+
+    @GetMapping("/lost-items/{id}")
+    public ResponseEntity<LostItem> getLostItemById(@PathVariable String id) {
+        return lostItemService.getLostItemById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/lost-items/{id}")
+    public ResponseEntity<Void> deleteLostItem(@PathVariable String id) {
+        lostItemService.deleteLostItem(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/lost-items/user")
+    public List<LostItem> getLostItemsByUser() {
+        String username = campusUserService.getUserId();
+        return lostItemService.getLostItemsByUsername(username);
+    }
+}

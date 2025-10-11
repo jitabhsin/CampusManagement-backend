@@ -1,0 +1,83 @@
+package edu.infosys.lostAndFoundApplication.service;
+
+import edu.infosys.lostAndFoundApplication.bean.FoundItem;
+import edu.infosys.lostAndFoundApplication.bean.LostItem;
+import edu.infosys.lostAndFoundApplication.dao.FoundItemRepository;
+import edu.infosys.lostAndFoundApplication.dao.LostItemRepository;
+import org.apache.commons.text.similarity.JaroWinklerSimilarity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+@Service
+public class FuzzyLogic {
+
+    @Autowired
+    private LostItemRepository lostItemRepository;
+
+    @Autowired
+    private FoundItemRepository foundItemRepository;
+
+    private final JaroWinklerSimilarity jaro = new JaroWinklerSimilarity();
+
+    private static final double ITEM_NAME_WEIGHT = 0.5;
+    private static final double BRAND_WEIGHT = 0.2;
+    private static final double COLOR_WEIGHT = 0.2;
+    private static final double CATEGORY_WEIGHT = 0.1;
+
+    public record FoundItemMatch(FoundItem foundItem, double score) {}
+
+    public List<FoundItemMatch> findMatchingFoundItems(String lostItemId, double threshold) {
+        Optional<LostItem> lostItemOptional = lostItemRepository.findById(lostItemId);
+
+        if (lostItemOptional.isEmpty()) {
+            return Collections.emptyList();
+        }
+        LostItem lostItem = lostItemOptional.get();
+        String usernameOfLoser = lostItem.getUsername();
+
+        List<FoundItem> foundItemsFromOthers = foundItemRepository.findByUsernameNot(usernameOfLoser);
+
+        return foundItemsFromOthers.stream()
+                .map(foundItem -> new FoundItemMatch(foundItem, calculateMatchScore(lostItem, foundItem)))
+                .filter(match -> match.score() >= threshold)
+                .sorted(Comparator.comparingDouble(FoundItemMatch::score).reversed())
+                .collect(Collectors.toList());
+    }
+
+    private double calculateMatchScore(LostItem lostItem, FoundItem foundItem) {
+        double itemNameScore = getSimilarityScore(lostItem.getItemName(), foundItem.getItemName());
+        double brandScore = getSimilarityScore(lostItem.getBrand(), foundItem.getBrand());
+        double colorScore = getSimilarityScore(lostItem.getColor(), foundItem.getColor());
+        double categoryScore = getSimilarityScore(lostItem.getCategory(), foundItem.getCategory());
+
+        return (itemNameScore * ITEM_NAME_WEIGHT) +
+               (brandScore * BRAND_WEIGHT) +
+               (colorScore * COLOR_WEIGHT) +
+               (categoryScore * CATEGORY_WEIGHT);
+    }
+
+    private double getSimilarityScore(String s1, String s2) {
+        boolean s1HasText = StringUtils.hasText(s1);
+        boolean s2HasText = StringUtils.hasText(s2);
+
+        if (!s1HasText && !s2HasText) {
+            return 1.0;
+        }
+
+        if (!s1HasText || !s2HasText) {
+            return 0.0;
+        }
+
+        String normalizedS1 = s1.trim().toLowerCase();
+        String normalizedS2 = s2.trim().toLowerCase();
+
+        return jaro.apply(normalizedS1, normalizedS2);
+    }
+}
