@@ -1,127 +1,77 @@
-Campus Lost & Found - Backend (currently building)
-📖 Overview
-This repository contains the backend source code for the Campus Lost and Found Portal, a specialized platform designed to help students and staff post and find lost items within the campus community. The system aims to provide a centralized, efficient, and secure way to connect individuals who have lost an item with those who have found it.
+# Campus Lost & Found - Backend (In Development)
 
-This project is currently under active development.
+## 📖 Overview
+The **Campus Lost and Found Portal** backend provides a centralized platform for students and staff to post and locate lost items within the campus community. This system ensures an **efficient, secure, and user-friendly** way to connect individuals who have lost items with those who have found them.
 
-✨ Features
-Based on the project plan, the following modules are being implemented:
+> ⚠️ **Note:** This project is currently under active development.
 
-👤 Authentication & Role Management:
+---
 
-Secure user registration and login for Students and Admins.
+## ✨ Features
 
-JWT-based authentication for secure session management.
+### 👤 Authentication & Role Management
+- Secure registration and login for **Students** and **Admins**  
+- JWT-based authentication for secure session management  
+- Campus verification system (e.g., university email domains)
 
-Campus verification system to restrict access to verified members (e.g., via university email domains).
+### 📦 Post Lost/Found Items
+- Structured form to submit lost or found items  
+- Fields include: `item name`, `description`, `category`, `date`, `location`  
+- Support for **image uploads** for better identification
 
-📦 Post Lost/Found Items:
+### 🔍 Auto-Matching & Search
+- Intelligent algorithm to suggest potential matches between lost and found posts  
+- Keyword similarity and location-based suggestions  
+- Advanced search and filtering options
 
-A structured form for users to submit details about a lost or found item.
+### 💬 Secure Chat System
+- In-app messaging for private communication  
+- Users can send/respond to contact requests to arrange item returns
 
-Fields include item name, description, category, date, and location.
+### 🛡️ Admin Dashboard & Moderation
+- Admin panel to manage content  
+- Approve, edit, or delete user-submitted posts  
+- Flag inappropriate content for review
 
-Support for image uploads to aid in visual identification.
+### 📊 Reporting & Analytics
+- Dashboard for admins to track:  
+  - Number of items reported, matched, and recovered  
+  - User engagement and platform activity
 
-🔍 Auto-Matching & Search:
+---
 
-An intelligent matching algorithm to automatically suggest potential matches between lost and found posts.
+## 🛠️ Tech Stack
+- **Language:** Java  
+- **Framework:** Spring Boot  
+- **Authentication:** Spring Security with JWT  
+- **Database:** MySQL / PostgreSQL  
+- **Image Storage:** Cloudinary  
+- **API Documentation:** Swagger / OpenAPI
 
-Utilizes keyword similarity and location-based suggestions to improve accuracy.
+---
 
-Advanced search and filtering capabilities for users.
+## 🚀 Getting Started
 
-💬 Secure Chat System:
+### Prerequisites
+- JDK (Java Development Kit)  
+- Maven / Gradle  
+- MySQL or PostgreSQL  
+- Cloudinary account for image storage
 
-In-app messaging to allow users to communicate securely and privately.
+### Installation & Setup
+```bash
+# Clone the repository
+git clone https://github.com/jitabhsin/CampusManagement-backend.git
 
-Users can send and respond to contact requests to arrange the return of items.
-
-🛡️ Admin Dashboard & Moderation:
-
-A comprehensive admin panel to manage platform content.
-
-Admins can view, approve, edit, or delete user-submitted posts.
-
-System for users to flag inappropriate content for admin review.
-
-📊 Reporting & Analytics:
-
-Dashboard for admins to view key metrics like the number of items reported, matched, and recovered.
-
-Analytics on user engagement and platform activity.
-
-🛠️ Tech Stack
-Language: Java
-
-Framework: Spring Boot
-
-Authentication: Spring Security with JWT
-
-Database: MySQL / PostgreSQL
-
-Image Storage: Cloudinary (for handling image uploads)
-
-API Documentation: Swagger / OpenAPI
-
-🚀 Getting Started
-Instructions for setting up the project locally.
-
-Prerequisites
-JDK (Java Development Kit)
-
-Maven / Gradle
-
-A running instance of MySQL or PostgreSQL
-
-A Cloudinary account for image storage
-
-Installation & Setup
-Clone the repository:
-
-git clone [https://github.com/jitabhsin/CampusManagement-backend.git](https://github.com/jitabhsin/CampusManagement-backend.git)
-
-Navigate to the project directory:
-
+# Navigate to the project directory
 cd CampusManagement-backend
 
-Install dependencies:
-
+# Install dependencies
 mvn install
 
-Configure the application:
+# Configure application
+# - Update database connection in application.properties
+# - Add Cloudinary API credentials
 
-Open the application.properties file.
-
-Update the database connection details (URL, username, password).
-
-Add your Cloudinary API credentials.
-
-Run the application:
-
+# Run the application
 mvn spring-boot:run
-
-📄 API Documentation
-API endpoints and usage details will be documented using Swagger/OpenAPI once the initial development phase is complete.
-
-🤝 Contributing
-Contributions are welcome! If you have suggestions or want to improve the project, please feel free to open an issue or submit a pull request.
-
-Fork the Project
-
-Create your Feature Branch (git checkout -b feature/NewFeature)
-
-Commit your Changes (git commit -m 'Add some NewFeature')
-
-Push to the Branch (git push origin feature/NewFeature)
-
-Open a Pull Request
-
-⚖️ License
-This project is currently unlicensed. A license will be added upon completion.
-
-Made by Abhishek Singh J
-
-GitHub
-
-LinkedIn
