@@ -2,6 +2,7 @@ package edu.infosys.lostAndFoundApplication.service;
 
 import edu.infosys.lostAndFoundApplication.bean.FoundItem;
 import edu.infosys.lostAndFoundApplication.bean.LostItem;
+import edu.infosys.lostAndFoundApplication.dao.FoundItemRepository;
 import edu.infosys.lostAndFoundApplication.dao.FuzzyLogicRepository;
 import edu.infosys.lostAndFoundApplication.dao.LostItemRepository;
 import org.apache.commons.text.similarity.JaroWinklerSimilarity;
@@ -18,6 +19,9 @@ public class FuzzyLogic {
 
     @Autowired
     private LostItemRepository lostItemRepository;
+
+    @Autowired
+    private FoundItemRepository foundItemRepository;
 
     @Autowired
     private FuzzyLogicRepository fuzzyLogicRepository;
@@ -40,8 +44,8 @@ public class FuzzyLogic {
         LostItem lostItem = lostItemOptional.get();
         String usernameOfLoser = lostItem.getUsername();
 
-        List<FoundItem> potentialMatches = fuzzyLogicRepository.findPotentialMatches(usernameOfLoser, lostItem.getCategory());
-        
+        List<FoundItem> potentialMatches = fuzzyLogicRepository.findPotentialFoundMatches(usernameOfLoser, lostItem.getCategory());
+
         List<FoundItem> matches = new ArrayList<>();
 
         for (FoundItem foundItem : potentialMatches) {
@@ -60,18 +64,64 @@ public class FuzzyLogic {
             String foundColor = normalize(foundItem.getColor());
             String lostCategory = normalize(lostItem.getCategory());
             String foundCategory = normalize(foundItem.getCategory());
-            
+
             double brandScore = calculateSmartFieldScore(lostBrand, foundBrand);
             double colorScore = calculateSmartFieldScore(lostColor, foundColor);
             double categoryScore = jaro.apply(lostCategory, foundCategory);
 
             double averageScore = (itemNameScore * ITEM_NAME_WEIGHT) +
-                                  (brandScore * BRAND_WEIGHT) +
-                                  (colorScore * COLOR_WEIGHT) +
-                                  (categoryScore * CATEGORY_WEIGHT);
+                    (brandScore * BRAND_WEIGHT) +
+                    (colorScore * COLOR_WEIGHT) +
+                    (categoryScore * CATEGORY_WEIGHT);
 
             if (averageScore >= threshold) {
                 matches.add(foundItem);
+            }
+        }
+        return matches;
+    }
+
+    public List<LostItem> findMatchingLostItems(String foundItemId, double threshold) {
+        Optional<FoundItem> foundItemOptional = foundItemRepository.findById(foundItemId);
+
+        if (foundItemOptional.isEmpty()) {
+            return Collections.emptyList();
+        }
+        FoundItem foundItem = foundItemOptional.get();
+        String usernameOfFinder = foundItem.getUsername();
+
+        List<LostItem> potentialMatches = fuzzyLogicRepository.findPotentialLostMatches(usernameOfFinder, foundItem.getCategory());
+
+        List<LostItem> matches = new ArrayList<>();
+
+        for (LostItem lostItem : potentialMatches) {
+            String foundItemName = normalize(foundItem.getItemName());
+            String lostItemName = normalize(lostItem.getItemName());
+
+            double itemNameScore = jaro.apply(foundItemName, lostItemName);
+
+            if (itemNameScore < MINIMUM_ITEM_NAME_SIMILARITY) {
+                continue;
+            }
+
+            String foundBrand = normalize(foundItem.getBrand());
+            String lostBrand = normalize(lostItem.getBrand());
+            String foundColor = normalize(foundItem.getColor());
+            String lostColor = normalize(lostItem.getColor());
+            String foundCategory = normalize(foundItem.getCategory());
+            String lostCategory = normalize(lostItem.getCategory());
+
+            double brandScore = calculateSmartFieldScore(foundBrand, lostBrand);
+            double colorScore = calculateSmartFieldScore(foundColor, lostColor);
+            double categoryScore = jaro.apply(foundCategory, lostCategory);
+
+            double averageScore = (itemNameScore * ITEM_NAME_WEIGHT) +
+                    (brandScore * BRAND_WEIGHT) +
+                    (colorScore * COLOR_WEIGHT) +
+                    (categoryScore * CATEGORY_WEIGHT);
+
+            if (averageScore >= threshold) {
+                matches.add(lostItem);
             }
         }
         return matches;
@@ -83,7 +133,7 @@ public class FuzzyLogic {
 
     private double calculateSmartFieldScore(String s1, String s2) {
         if (s1.isEmpty() && s2.isEmpty()) {
-            return 1.0; 
+            return 1.0;
         }
         if (s1.isEmpty() || s2.isEmpty()) {
             return 0.0;
