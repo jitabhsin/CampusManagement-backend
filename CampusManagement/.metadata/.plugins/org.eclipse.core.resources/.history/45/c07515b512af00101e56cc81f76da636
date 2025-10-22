@@ -35,58 +35,92 @@ public class FuzzyLogic {
 
     public List<FoundItem> findMatchingFoundItems(String lostItemId, double threshold) {
         Optional<LostItem> lostItemOptional = lostItemRepository.findById(lostItemId);
-        if (lostItemOptional.isEmpty()) return Collections.emptyList();
 
+        if (lostItemOptional.isEmpty()) {
+            return Collections.emptyList();
+        }
         LostItem lostItem = lostItemOptional.get();
         String usernameOfLoser = lostItem.getUsername();
+
         List<FoundItem> potentialMatches = fuzzyLogicRepository.findPotentialFoundMatches(usernameOfLoser, lostItem.getCategory());
+
         List<FoundItem> matches = new ArrayList<>();
 
         for (FoundItem foundItem : potentialMatches) {
             String lostItemName = normalize(lostItem.getItemName());
             String foundItemName = normalize(foundItem.getItemName());
-            double itemNameScore = calculateEnhancedSimilarity(lostItemName, foundItemName);
-            if (itemNameScore < MINIMUM_ITEM_NAME_SIMILARITY) continue;
 
-            double brandScore = calculateEnhancedSimilarity(normalize(lostItem.getBrand()), normalize(foundItem.getBrand()));
-            double colorScore = calculateEnhancedSimilarity(normalize(lostItem.getColor()), normalize(foundItem.getColor()));
-            double categoryScore = calculateEnhancedSimilarity(normalize(lostItem.getCategory()), normalize(foundItem.getCategory()));
+            double itemNameScore = calculateEnhancedSimilarity(lostItemName, foundItemName);
+
+            if (itemNameScore < MINIMUM_ITEM_NAME_SIMILARITY) {
+                continue;
+            }
+
+            String lostBrand = normalize(lostItem.getBrand());
+            String foundBrand = normalize(foundItem.getBrand());
+            String lostColor = normalize(lostItem.getColor());
+            String foundColor = normalize(foundItem.getColor());
+            String lostCategory = normalize(lostItem.getCategory());
+            String foundCategory = normalize(foundItem.getCategory());
+
+            double brandScore = calculateEnhancedSimilarity(lostBrand, foundBrand);
+            double colorScore = calculateEnhancedSimilarity(lostColor, foundColor);
+            double categoryScore = calculateEnhancedSimilarity(lostCategory, foundCategory);
 
             double averageScore = (itemNameScore * ITEM_NAME_WEIGHT) +
                     (brandScore * BRAND_WEIGHT) +
                     (colorScore * COLOR_WEIGHT) +
                     (categoryScore * CATEGORY_WEIGHT);
 
-            if (averageScore >= threshold) matches.add(foundItem);
+            if (averageScore >= threshold) {
+                matches.add(foundItem);
+            }
         }
         return matches;
     }
 
     public List<LostItem> findMatchingLostItems(String foundItemId, double threshold) {
         Optional<FoundItem> foundItemOptional = foundItemRepository.findById(foundItemId);
-        if (foundItemOptional.isEmpty()) return Collections.emptyList();
 
+        if (foundItemOptional.isEmpty()) {
+            return Collections.emptyList();
+        }
         FoundItem foundItem = foundItemOptional.get();
         String usernameOfFinder = foundItem.getUsername();
+
         List<LostItem> potentialMatches = fuzzyLogicRepository.findPotentialLostMatches(usernameOfFinder, foundItem.getCategory());
+
         List<LostItem> matches = new ArrayList<>();
 
         for (LostItem lostItem : potentialMatches) {
             String foundItemName = normalize(foundItem.getItemName());
             String lostItemName = normalize(lostItem.getItemName());
-            double itemNameScore = calculateEnhancedSimilarity(foundItemName, lostItemName);
-            if (itemNameScore < MINIMUM_ITEM_NAME_SIMILARITY) continue;
 
-            double brandScore = calculateEnhancedSimilarity(normalize(foundItem.getBrand()), normalize(lostItem.getBrand()));
-            double colorScore = calculateEnhancedSimilarity(normalize(foundItem.getColor()), normalize(lostItem.getColor()));
-            double categoryScore = calculateEnhancedSimilarity(normalize(foundItem.getCategory()), normalize(lostItem.getCategory()));
+            double itemNameScore = calculateEnhancedSimilarity(foundItemName, lostItemName);
+
+            if (itemNameScore < MINIMUM_ITEM_NAME_SIMILARITY) {
+                continue;
+            }
+
+            String foundBrand = normalize(foundItem.getBrand());
+            String lostBrand = normalize(lostItem.getBrand());
+            String foundColor = normalize(foundItem.getColor());
+            String lostColor = normalize(lostItem.getColor());
+            String foundCategory = normalize(foundItem.getCategory());
+            String lostCategory = normalize(lostItem.getCategory());
+
+            double brandScore = calculateEnhancedSimilarity(foundBrand, lostBrand);
+            double colorScore = calculateEnhancedSimilarity(foundColor, lostColor);
+            double categoryScore = calculateEnhancedSimilarity(foundCategory, lostCategory);
 
             double averageScore = (itemNameScore * ITEM_NAME_WEIGHT) +
                     (brandScore * BRAND_WEIGHT) +
                     (colorScore * COLOR_WEIGHT) +
                     (categoryScore * CATEGORY_WEIGHT);
 
-            if (averageScore >= threshold) matches.add(lostItem);
+            if (averageScore >= threshold) {
+                matches.add(lostItem);
+            }
         }
         return matches;
     }
@@ -94,31 +128,24 @@ public class FuzzyLogic {
     public List<FoundItem> searchFoundItems(String query, String username, double threshold) {
         List<FoundItem> potential = fuzzyLogicRepository.findAllFoundExcludingUser(username);
         Map<FoundItem, Double> scored = new HashMap<>();
+
         String q = normalize(query);
-
-        final double ITEM_NAME_THRESHOLD = 0.6;
-        final double ATTRIBUTE_THRESHOLD = 0.85;
-
         for (FoundItem f : potential) {
             double itemNameScore = calculateEnhancedSimilarity(q, normalize(f.getItemName()));
             double brandScore = calculateEnhancedSimilarity(q, normalize(f.getBrand()));
             double colorScore = calculateEnhancedSimilarity(q, normalize(f.getColor()));
             double categoryScore = calculateEnhancedSimilarity(q, normalize(f.getCategory()));
             double locationScore = calculateEnhancedSimilarity(q, normalize(f.getLocation()));
-            double maxAttributeScore = Math.max(brandScore, Math.max(colorScore, Math.max(categoryScore, locationScore)));
 
-            double finalScore = 0.0;
-            boolean isMatch = false;
+            double score = (itemNameScore * 0.5) +
+                    (brandScore * 0.15) +
+                    (colorScore * 0.1) +
+                    (categoryScore * 0.15) +
+                    (locationScore * 0.1);
 
-            if (itemNameScore >= ITEM_NAME_THRESHOLD) {
-                finalScore = itemNameScore;
-                isMatch = true;
-            } else if (maxAttributeScore >= ATTRIBUTE_THRESHOLD) {
-                finalScore = maxAttributeScore * 0.9;
-                isMatch = true;
+            if (score >= threshold && (itemNameScore > 0.6 || score > (threshold * 1.2))) {
+                scored.put(f, score);
             }
-
-            if (isMatch) scored.put(f, finalScore);
         }
 
         return scored.entrySet().stream()
@@ -130,31 +157,25 @@ public class FuzzyLogic {
     public List<LostItem> searchLostItems(String query, String username, double threshold) {
         List<LostItem> potential = fuzzyLogicRepository.findAllLostExcludingUser(username);
         Map<LostItem, Double> scored = new HashMap<>();
+
         String q = normalize(query);
-
-        final double ITEM_NAME_THRESHOLD = 0.6;
-        final double ATTRIBUTE_THRESHOLD = 0.85;
-
+all
         for (LostItem l : potential) {
             double itemNameScore = calculateEnhancedSimilarity(q, normalize(l.getItemName()));
             double brandScore = calculateEnhancedSimilarity(q, normalize(l.getBrand()));
             double colorScore = calculateEnhancedSimilarity(q, normalize(l.getColor()));
             double categoryScore = calculateEnhancedSimilarity(q, normalize(l.getCategory()));
             double locationScore = calculateEnhancedSimilarity(q, normalize(l.getLocation()));
-            double maxAttributeScore = Math.max(brandScore, Math.max(colorScore, Math.max(categoryScore, locationScore)));
 
-            double finalScore = 0.0;
-            boolean isMatch = false;
+            double score = (itemNameScore * 0.5) +
+                    (brandScore * 0.15) +
+                    (colorScore * 0.1) +
+                    (categoryScore * 0.15) +
+                    (locationScore * 0.1);
 
-            if (itemNameScore >= ITEM_NAME_THRESHOLD) {
-                finalScore = itemNameScore;
-                isMatch = true;
-            } else if (maxAttributeScore >= ATTRIBUTE_THRESHOLD) {
-                finalScore = maxAttributeScore * 0.9;
-                isMatch = true;
+            if (score >= threshold && (itemNameScore > 0.6 || score > (threshold * 1.2))) {
+                scored.put(l, score);
             }
-
-            if (isMatch) scored.put(l, finalScore);
         }
 
         return scored.entrySet().stream()
@@ -168,9 +189,17 @@ public class FuzzyLogic {
     }
 
     private double calculateEnhancedSimilarity(String s1, String s2) {
-        if (s1.isEmpty() && s2.isEmpty()) return 1.0;
-        if (s1.isEmpty() || s2.isEmpty()) return 0.0;
-        if (s1.contains(s2) || s2.contains(s1)) return 1.0;
+        if (s1.isEmpty() && s2.isEmpty()) {
+            return 1.0;
+        }
+        if (s1.isEmpty() || s2.isEmpty()) {
+            return 0.0;
+        }
+
+        if (s1.contains(s2) || s2.contains(s1)) {
+            return 1.0;
+        }
+
         return jaro.apply(s1, s2);
     }
 }

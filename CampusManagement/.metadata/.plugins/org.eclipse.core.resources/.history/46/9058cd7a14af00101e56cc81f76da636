@@ -48,9 +48,16 @@ public class FuzzyLogic {
             double itemNameScore = calculateEnhancedSimilarity(lostItemName, foundItemName);
             if (itemNameScore < MINIMUM_ITEM_NAME_SIMILARITY) continue;
 
-            double brandScore = calculateEnhancedSimilarity(normalize(lostItem.getBrand()), normalize(foundItem.getBrand()));
-            double colorScore = calculateEnhancedSimilarity(normalize(lostItem.getColor()), normalize(foundItem.getColor()));
-            double categoryScore = calculateEnhancedSimilarity(normalize(lostItem.getCategory()), normalize(foundItem.getCategory()));
+            String lostBrand = normalize(lostItem.getBrand());
+            String foundBrand = normalize(foundItem.getBrand());
+            String lostColor = normalize(lostItem.getColor());
+            String foundColor = normalize(foundItem.getColor());
+            String lostCategory = normalize(lostItem.getCategory());
+            String foundCategory = normalize(foundItem.getCategory());
+
+            double brandScore = calculateEnhancedSimilarity(lostBrand, foundBrand);
+            double colorScore = calculateEnhancedSimilarity(lostColor, foundColor);
+            double categoryScore = calculateEnhancedSimilarity(lostCategory, foundCategory);
 
             double averageScore = (itemNameScore * ITEM_NAME_WEIGHT) +
                     (brandScore * BRAND_WEIGHT) +
@@ -77,9 +84,16 @@ public class FuzzyLogic {
             double itemNameScore = calculateEnhancedSimilarity(foundItemName, lostItemName);
             if (itemNameScore < MINIMUM_ITEM_NAME_SIMILARITY) continue;
 
-            double brandScore = calculateEnhancedSimilarity(normalize(foundItem.getBrand()), normalize(lostItem.getBrand()));
-            double colorScore = calculateEnhancedSimilarity(normalize(foundItem.getColor()), normalize(lostItem.getColor()));
-            double categoryScore = calculateEnhancedSimilarity(normalize(foundItem.getCategory()), normalize(lostItem.getCategory()));
+            String foundBrand = normalize(foundItem.getBrand());
+            String lostBrand = normalize(lostItem.getBrand());
+            String foundColor = normalize(foundItem.getColor());
+            String lostColor = normalize(lostItem.getColor());
+            String foundCategory = normalize(foundItem.getCategory());
+            String lostCategory = normalize(lostItem.getCategory());
+
+            double brandScore = calculateEnhancedSimilarity(foundBrand, lostBrand);
+            double colorScore = calculateEnhancedSimilarity(foundColor, lostColor);
+            double categoryScore = calculateEnhancedSimilarity(foundCategory, lostCategory);
 
             double averageScore = (itemNameScore * ITEM_NAME_WEIGHT) +
                     (brandScore * BRAND_WEIGHT) +
@@ -96,29 +110,19 @@ public class FuzzyLogic {
         Map<FoundItem, Double> scored = new HashMap<>();
         String q = normalize(query);
 
-        final double ITEM_NAME_THRESHOLD = 0.6;
-        final double ATTRIBUTE_THRESHOLD = 0.85;
-
         for (FoundItem f : potential) {
             double itemNameScore = calculateEnhancedSimilarity(q, normalize(f.getItemName()));
             double brandScore = calculateEnhancedSimilarity(q, normalize(f.getBrand()));
             double colorScore = calculateEnhancedSimilarity(q, normalize(f.getColor()));
             double categoryScore = calculateEnhancedSimilarity(q, normalize(f.getCategory()));
             double locationScore = calculateEnhancedSimilarity(q, normalize(f.getLocation()));
-            double maxAttributeScore = Math.max(brandScore, Math.max(colorScore, Math.max(categoryScore, locationScore)));
 
-            double finalScore = 0.0;
-            boolean isMatch = false;
+            double maxScore = Math.max(itemNameScore,
+                                Math.max(brandScore,
+                                Math.max(colorScore,
+                                Math.max(categoryScore, locationScore))));
 
-            if (itemNameScore >= ITEM_NAME_THRESHOLD) {
-                finalScore = itemNameScore;
-                isMatch = true;
-            } else if (maxAttributeScore >= ATTRIBUTE_THRESHOLD) {
-                finalScore = maxAttributeScore * 0.9;
-                isMatch = true;
-            }
-
-            if (isMatch) scored.put(f, finalScore);
+            if (maxScore >= threshold) scored.put(f, maxScore);
         }
 
         return scored.entrySet().stream()
@@ -132,29 +136,19 @@ public class FuzzyLogic {
         Map<LostItem, Double> scored = new HashMap<>();
         String q = normalize(query);
 
-        final double ITEM_NAME_THRESHOLD = 0.6;
-        final double ATTRIBUTE_THRESHOLD = 0.85;
-
         for (LostItem l : potential) {
             double itemNameScore = calculateEnhancedSimilarity(q, normalize(l.getItemName()));
             double brandScore = calculateEnhancedSimilarity(q, normalize(l.getBrand()));
             double colorScore = calculateEnhancedSimilarity(q, normalize(l.getColor()));
             double categoryScore = calculateEnhancedSimilarity(q, normalize(l.getCategory()));
             double locationScore = calculateEnhancedSimilarity(q, normalize(l.getLocation()));
-            double maxAttributeScore = Math.max(brandScore, Math.max(colorScore, Math.max(categoryScore, locationScore)));
 
-            double finalScore = 0.0;
-            boolean isMatch = false;
+            double maxScore = Math.max(itemNameScore,
+                                Math.max(brandScore,
+                                Math.max(colorScore,
+                                Math.max(categoryScore, locationScore))));
 
-            if (itemNameScore >= ITEM_NAME_THRESHOLD) {
-                finalScore = itemNameScore;
-                isMatch = true;
-            } else if (maxAttributeScore >= ATTRIBUTE_THRESHOLD) {
-                finalScore = maxAttributeScore * 0.9;
-                isMatch = true;
-            }
-
-            if (isMatch) scored.put(l, finalScore);
+            if (maxScore >= threshold) scored.put(l, maxScore);
         }
 
         return scored.entrySet().stream()
