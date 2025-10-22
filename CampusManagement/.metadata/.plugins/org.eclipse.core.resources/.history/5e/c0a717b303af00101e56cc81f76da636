@@ -29,20 +29,4 @@ public class FuzzyLogicController {
             @RequestParam(defaultValue = "0.7") double threshold) {
         return fuzzyLogic.findMatchingLostItems(foundItemId, threshold);
     }
-
-    @GetMapping("/search/found")
-    public List<FoundItem> searchFoundItems(
-            @RequestParam String query,
-            @RequestParam String username,
-            @RequestParam(defaultValue = "0.3") double threshold) {
-        return fuzzyLogic.searchFoundItems(query, username, threshold);
-    }
-
-    @GetMapping("/search/lost")
-    public List<LostItem> searchLostItems(
-            @RequestParam String query,
-            @RequestParam String username,
-            @RequestParam(defaultValue = "0.3") double threshold) {
-        return fuzzyLogic.searchLostItems(query, username, threshold);
-    }
 }

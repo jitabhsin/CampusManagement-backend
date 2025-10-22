@@ -7,10 +7,14 @@ import edu.infosys.lostAndFoundApplication.dao.FuzzyLogicRepository;
 import edu.infosys.lostAndFoundApplication.dao.LostItemRepository;
 import org.apache.commons.text.similarity.JaroWinklerSimilarity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FuzzyLogic {
@@ -32,6 +36,102 @@ public class FuzzyLogic {
     private static final double CATEGORY_WEIGHT = 0.10;
 
     private static final double MINIMUM_ITEM_NAME_SIMILARITY = 0.6;
+
+    // --- Helper method to get current user ---
+    private String getCurrentUsername() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated() || "anonymousUser".equals(authentication.getPrincipal())) {
+            return null;
+        }
+        return authentication.getName();
+    }
+
+    // --- UPDATED METHOD: Global Search for Found Items ---
+    public List<FoundItem> searchFoundItems(String query, double threshold) {
+        String username = getCurrentUsername();
+        if (username == null) {
+            return Collections.emptyList(); // Not authenticated
+        }
+
+        List<FoundItem> allFoundItems = fuzzyLogicRepository.findAllFoundItemsExcludingUser(username);
+        List<FoundItem> matches = new ArrayList<>();
+        String normalizedQuery = normalize(query);
+        String[] queryTokens = normalizedQuery.split("\\s+"); // Split query by whitespace
+
+        for (FoundItem item : allFoundItems) {
+            String itemName = normalize(item.getItemName());
+            String brand = normalize(item.getBrand());
+            String color = normalize(item.getColor());
+            String category = normalize(item.getCategory());
+
+            double totalScore = 0.0;
+            int validTokens = 0;
+
+            for (String token : queryTokens) {
+                if (token.isEmpty()) continue;
+                validTokens++;
+                
+                // Find the best match score for this token across all key fields
+                double maxTokenSimilarity = Math.max(jaro.apply(token, itemName), jaro.apply(token, brand));
+                maxTokenSimilarity = Math.max(maxTokenSimilarity, jaro.apply(token, color));
+                maxTokenSimilarity = Math.max(maxTokenSimilarity, jaro.apply(token, category));
+                
+                totalScore += maxTokenSimilarity;
+            }
+
+            // Calculate the average score based on valid tokens
+            double averageScore = (validTokens > 0) ? totalScore / validTokens : 0.0;
+
+            if (averageScore >= threshold) {
+                matches.add(item);
+            }
+        }
+        return matches;
+    }
+
+    // --- UPDATED METHOD: Global Search for Lost Items ---
+    public List<LostItem> searchLostItems(String query, double threshold) {
+        String username = getCurrentUsername();
+        if (username == null) {
+            return Collections.emptyList(); // Not authenticated
+        }
+
+        List<LostItem> allLostItems = fuzzyLogicRepository.findAllLostItemsExcludingUser(username);
+        List<LostItem> matches = new ArrayList<>();
+        String normalizedQuery = normalize(query);
+        String[] queryTokens = normalizedQuery.split("\\s+"); // Split query by whitespace
+
+        for (LostItem item : allLostItems) {
+            String itemName = normalize(item.getItemName());
+            String brand = normalize(item.getBrand());
+            String color = normalize(item.getColor());
+            String category = normalize(item.getCategory());
+
+            double totalScore = 0.0;
+            int validTokens = 0;
+            
+            for (String token : queryTokens) {
+                if (token.isEmpty()) continue;
+                validTokens++;
+                
+                // Find the best match score for this token across all key fields
+                double maxTokenSimilarity = Math.max(jaro.apply(token, itemName), jaro.apply(token, brand));
+                maxTokenSimilarity = Math.max(maxTokenSimilarity, jaro.apply(token, color));
+                maxTokenSimilarity = Math.max(maxTokenSimilarity, jaro.apply(token, category));
+                
+                totalScore += maxTokenSimilarity;
+            }
+
+            // Calculate the average score based on valid tokens
+            double averageScore = (validTokens > 0) ? totalScore / validTokens : 0.0;
+
+            if (averageScore >= threshold) {
+                matches.add(item);
+            }
+        }
+        return matches;
+    }
+
 
     public List<FoundItem> findMatchingFoundItems(String lostItemId, double threshold) {
         Optional<LostItem> lostItemOptional = lostItemRepository.findById(lostItemId);
@@ -123,64 +223,6 @@ public class FuzzyLogic {
             }
         }
         return matches;
-    }
-
-    public List<FoundItem> searchFoundItems(String query, String username, double threshold) {
-        List<FoundItem> potential = fuzzyLogicRepository.findAllFoundExcludingUser(username);
-        Map<FoundItem, Double> scored = new HashMap<>();
-
-        String q = normalize(query);
-        for (FoundItem f : potential) {
-            double itemNameScore = jaro.apply(q, normalize(f.getItemName()));
-            double brandScore = calculateSmartFieldScore(q, normalize(f.getBrand()));
-            double colorScore = calculateSmartFieldScore(q, normalize(f.getColor()));
-            double categoryScore = calculateSmartFieldScore(q, normalize(f.getCategory()));
-            double locationScore = calculateSmartFieldScore(q, normalize(f.getLocation()));
-
-            double score = (itemNameScore * 0.4) +
-                    (brandScore * 0.2) +
-                    (colorScore * 0.1) +
-                    (categoryScore * 0.1) +
-                    (locationScore * 0.1);
-
-            if (score >= threshold) {
-                scored.put(f, score);
-            }
-        }
-
-        return scored.entrySet().stream()
-                .sorted(Map.Entry.<FoundItem, Double>comparingByValue().reversed())
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toList());
-    }
-
-    public List<LostItem> searchLostItems(String query, String username, double threshold) {
-        List<LostItem> potential = fuzzyLogicRepository.findAllLostExcludingUser(username);
-        Map<LostItem, Double> scored = new HashMap<>();
-
-        String q = normalize(query);
-        for (LostItem l : potential) {
-            double itemNameScore = jaro.apply(q, normalize(l.getItemName()));
-            double brandScore = calculateSmartFieldScore(q, normalize(l.getBrand()));
-            double colorScore = calculateSmartFieldScore(q, normalize(l.getColor()));
-            double categoryScore = calculateSmartFieldScore(q, normalize(l.getCategory()));
-            double locationScore = calculateSmartFieldScore(q, normalize(l.getLocation()));
-
-            double score = (itemNameScore * 0.4) +
-                    (brandScore * 0.2) +
-                    (colorScore * 0.1) +
-                    (categoryScore * 0.1) +
-                    (locationScore * 0.1);
-
-            if (score >= threshold) {
-                scored.put(l, score);
-            }
-        }
-
-        return scored.entrySet().stream()
-                .sorted(Map.Entry.<LostItem, Double>comparingByValue().reversed())
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toList());
     }
 
     private String normalize(String input) {

@@ -30,19 +30,19 @@ public class FuzzyLogicController {
         return fuzzyLogic.findMatchingLostItems(foundItemId, threshold);
     }
 
+    // --- NEW ENDPOINT for searching found items ---
     @GetMapping("/search/found")
     public List<FoundItem> searchFoundItems(
             @RequestParam String query,
-            @RequestParam String username,
-            @RequestParam(defaultValue = "0.3") double threshold) {
-        return fuzzyLogic.searchFoundItems(query, username, threshold);
+            @RequestParam(defaultValue = "0.7") double threshold) {
+        return fuzzyLogic.searchFoundItems(query, threshold);
     }
 
+    // --- NEW ENDPOINT for searching lost items ---
     @GetMapping("/search/lost")
     public List<LostItem> searchLostItems(
             @RequestParam String query,
-            @RequestParam String username,
-            @RequestParam(defaultValue = "0.3") double threshold) {
-        return fuzzyLogic.searchLostItems(query, username, threshold);
+            @RequestParam(defaultValue = "0.7") double threshold) {
+        return fuzzyLogic.searchLostItems(query, threshold);
     }
 }

@@ -9,8 +9,10 @@ import org.apache.commons.text.similarity.JaroWinklerSimilarity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FuzzyLogic {
@@ -123,64 +125,6 @@ public class FuzzyLogic {
             }
         }
         return matches;
-    }
-
-    public List<FoundItem> searchFoundItems(String query, String username, double threshold) {
-        List<FoundItem> potential = fuzzyLogicRepository.findAllFoundExcludingUser(username);
-        Map<FoundItem, Double> scored = new HashMap<>();
-
-        String q = normalize(query);
-        for (FoundItem f : potential) {
-            double itemNameScore = jaro.apply(q, normalize(f.getItemName()));
-            double brandScore = calculateSmartFieldScore(q, normalize(f.getBrand()));
-            double colorScore = calculateSmartFieldScore(q, normalize(f.getColor()));
-            double categoryScore = calculateSmartFieldScore(q, normalize(f.getCategory()));
-            double locationScore = calculateSmartFieldScore(q, normalize(f.getLocation()));
-
-            double score = (itemNameScore * 0.4) +
-                    (brandScore * 0.2) +
-                    (colorScore * 0.1) +
-                    (categoryScore * 0.1) +
-                    (locationScore * 0.1);
-
-            if (score >= threshold) {
-                scored.put(f, score);
-            }
-        }
-
-        return scored.entrySet().stream()
-                .sorted(Map.Entry.<FoundItem, Double>comparingByValue().reversed())
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toList());
-    }
-
-    public List<LostItem> searchLostItems(String query, String username, double threshold) {
-        List<LostItem> potential = fuzzyLogicRepository.findAllLostExcludingUser(username);
-        Map<LostItem, Double> scored = new HashMap<>();
-
-        String q = normalize(query);
-        for (LostItem l : potential) {
-            double itemNameScore = jaro.apply(q, normalize(l.getItemName()));
-            double brandScore = calculateSmartFieldScore(q, normalize(l.getBrand()));
-            double colorScore = calculateSmartFieldScore(q, normalize(l.getColor()));
-            double categoryScore = calculateSmartFieldScore(q, normalize(l.getCategory()));
-            double locationScore = calculateSmartFieldScore(q, normalize(l.getLocation()));
-
-            double score = (itemNameScore * 0.4) +
-                    (brandScore * 0.2) +
-                    (colorScore * 0.1) +
-                    (categoryScore * 0.1) +
-                    (locationScore * 0.1);
-
-            if (score >= threshold) {
-                scored.put(l, score);
-            }
-        }
-
-        return scored.entrySet().stream()
-                .sorted(Map.Entry.<LostItem, Double>comparingByValue().reversed())
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toList());
     }
 
     private String normalize(String input) {
